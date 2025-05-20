@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -80,31 +79,6 @@ const Education = () => {
                 <ul className="list-disc list-inside text-sm text-muted-foreground">
                   <li>Malhotra, P., et al. (2015). "Long Short Term Memory Networks for Anomaly Detection in Time Series"</li>
                   <li>Hundman, K., et al. (2018). "Detecting Spacecraft Anomalies Using LSTMs and Nonparametric Dynamic Thresholding"</li>
-                </ul>
-              </div>
-              
-              {/* Isolation Forest */}
-              <div className="bg-card rounded-lg border border-border p-6">
-                <div className="flex items-center mb-4">
-                  <div className="p-2 bg-primary/10 rounded-full mr-3">
-                    <AlertTriangle className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold">Isolation Forest</h3>
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  Isolation Forest is an ensemble-based algorithm that explicitly isolates anomalies instead of profiling normal data points. It uses the fact that anomalies are few and different, making them more susceptible to isolation.
-                </p>
-                <h4 className="font-medium mb-2">How it works for anomaly detection:</h4>
-                <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground mb-4">
-                  <li>The algorithm creates isolation trees by randomly selecting features and split values</li>
-                  <li>Anomalies require fewer splits to be isolated compared to normal points</li>
-                  <li>An anomaly score is computed based on the average path length across trees</li>
-                  <li>Points with shorter average path lengths are considered anomalies</li>
-                </ol>
-                <h4 className="font-medium mb-2">Academic References:</h4>
-                <ul className="list-disc list-inside text-sm text-muted-foreground">
-                  <li>Liu, F. T., et al. (2008). "Isolation Forest"</li>
-                  <li>Hariri, S., et al. (2019). "Extended Isolation Forest for Anomaly Detection in Complex Financial Data"</li>
                 </ul>
               </div>
               

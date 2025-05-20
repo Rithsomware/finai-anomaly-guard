@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
@@ -145,7 +144,7 @@ const Index = () => {
         {/* Features Section - Simplified */}
         <section className="py-8">
           <div className="container px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col items-center text-center p-4 bg-card rounded-lg border border-border">
                 <div className="p-2 bg-primary/10 rounded-full mb-3">
                   <Brain className="h-6 w-6 text-primary" />
@@ -163,16 +162,6 @@ const Index = () => {
                 <h3 className="text-lg font-medium mb-1">LSTM Analysis</h3>
                 <p className="text-sm text-muted-foreground">
                   Sequential models that detect temporal anomalies
-                </p>
-              </div>
-              
-              <div className="flex flex-col items-center text-center p-4 bg-card rounded-lg border border-border">
-                <div className="p-2 bg-primary/10 rounded-full mb-3">
-                  <AlertTriangle className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-medium mb-1">Educational Demo</h3>
-                <p className="text-sm text-muted-foreground">
-                  Interactive visualization of anomaly detection concepts
                 </p>
               </div>
             </div>

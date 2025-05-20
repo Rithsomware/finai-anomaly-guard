@@ -50,6 +50,5 @@ export const generateMockAnomalyScores = (timeSeriesData) => {
 
 export const mockModels = [
   { id: 1, name: "Autoencoder", description: "Deep learning model that compares reconstruction error to detect anomalies" },
-  { id: 2, name: "LSTM", description: "Long Short-Term Memory network for sequential anomaly detection" },
-  { id: 3, name: "Isolation Forest", description: "Ensemble method that isolates anomalies instead of profiling normal points" },
+  { id: 2, name: "LSTM", description: "Long Short-Term Memory network for sequential anomaly detection" }
 ];
