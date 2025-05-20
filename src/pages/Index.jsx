@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
@@ -27,6 +28,7 @@ const Index = () => {
   
   // Load some mock data initially for demonstration
   useEffect(() => {
+    // Initially load data without anomalies
     const demoData = generateMockTimeSeriesData(60, false);
     setTimeSeriesData(demoData);
   }, []);
@@ -41,8 +43,10 @@ const Index = () => {
     
     // In a real application, we would process the CSV file here
     // For the demo, let's generate new mock data when a file is uploaded
-    const mockData = generateMockTimeSeriesData(90, true);
+    const mockData = generateMockTimeSeriesData(90, false); // Start with data without anomalies
     setTimeSeriesData(mockData);
+    // Reset any previous analysis results
+    setAnalysisResults([]);
   };
   
   const handleAnalyzeClick = () => {
@@ -50,14 +54,18 @@ const Index = () => {
     
     // Simulate API call to Python backend for anomaly detection
     setTimeout(() => {
-      const results = generateMockAnomalyScores(timeSeriesData);
+      // Generate new data with anomalies for the analysis result
+      const dataWithAnomalies = generateMockTimeSeriesData(90, true);
+      const results = generateMockAnomalyScores(dataWithAnomalies);
+      
       setAnalysisResults(results);
-      setTimeSeriesData(results);
+      setTimeSeriesData(results); // Update the chart with the analysis results
       setIsLoading(false);
       
+      const anomalyCount = results.filter(r => r.isAnomaly).length;
       toast({
         title: "Analysis Complete",
-        description: `Detected ${results.filter(r => r.isAnomaly).length} anomalies in your data.`,
+        description: `Detected ${anomalyCount} anomalies in your data.`,
         duration: 5000,
       });
     }, 2000);

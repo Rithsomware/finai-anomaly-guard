@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceDot, ReferenceArea, Legend } from 'recharts';
 
-const TimeSeriesChart = ({ data, anomalies = [], loading = false }) => {
+const TimeSeriesChart = ({ data, loading = false }) => {
   const [chartData, setChartData] = useState([]);
   const [chartWidth, setChartWidth] = useState(0);
   const [showAnnotations, setShowAnnotations] = useState(true);
@@ -83,19 +82,21 @@ const TimeSeriesChart = ({ data, anomalies = [], loading = false }) => {
   let inRegion = false;
   let startIdx = -1;
   
-  chartData.forEach((point, idx) => {
-    if (point.isAnomaly && !inRegion) {
-      inRegion = true;
-      startIdx = idx;
-    } else if (!point.isAnomaly && inRegion) {
-      inRegion = false;
-      anomalyRegions.push({ start: startIdx, end: idx - 1 });
+  if (chartData && chartData.length > 0) {
+    chartData.forEach((point, idx) => {
+      if (point.isAnomaly && !inRegion) {
+        inRegion = true;
+        startIdx = idx;
+      } else if (!point.isAnomaly && inRegion) {
+        inRegion = false;
+        anomalyRegions.push({ start: startIdx, end: idx - 1 });
+      }
+    });
+    
+    // Close any open region at the end
+    if (inRegion) {
+      anomalyRegions.push({ start: startIdx, end: chartData.length - 1 });
     }
-  });
-  
-  // Close any open region at the end
-  if (inRegion) {
-    anomalyRegions.push({ start: startIdx, end: chartData.length - 1 });
   }
   
   return (

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AlertCircle, TrendingUp, Calendar, ArrowRight, BookOpen, InfoIcon } from 'lucide-react';
 
@@ -24,14 +23,14 @@ const AnomalyResults = ({ results, loading }) => {
         </div>
         <h3 className="text-lg font-medium mb-1">No Results Available</h3>
         <p className="text-sm text-muted-foreground">
-          Upload your time series data to analyze for anomalies
+          Click the "Analyze Data" button to detect anomalies
         </p>
       </div>
     );
   }
   
   // Filter anomalies
-  const anomalies = results.filter(point => point.isAnomaly);
+  const anomalies = results.filter(point => point.isAnomaly === true);
   
   return (
     <div className="space-y-6">
