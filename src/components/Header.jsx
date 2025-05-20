@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ChevronRight, BarChart3, FileText, Upload, Home } from 'lucide-react';
+import { ChevronRight, BarChart3, FileText, Upload, Home, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -19,6 +19,10 @@ const Header = () => {
             <Home className="mr-1 h-4 w-4" />
             Home
           </Link>
+          <Link to="/education" className="flex items-center text-sm font-medium hover:text-primary transition-colors">
+            <BookOpen className="mr-1 h-4 w-4" />
+            Educational Resources
+          </Link>
           <Link to="/" className="flex items-center text-sm font-medium hover:text-primary transition-colors">
             <Upload className="mr-1 h-4 w-4" />
             Upload Data
@@ -26,10 +30,6 @@ const Header = () => {
           <Link to="/" className="flex items-center text-sm font-medium hover:text-primary transition-colors">
             <FileText className="mr-1 h-4 w-4" />
             Documentation
-          </Link>
-          <Link to="/" className="bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors">
-            Get Started
-            <ChevronRight className="ml-1 h-4 w-4 inline" />
           </Link>
         </nav>
         
