@@ -110,45 +110,6 @@ const Index = () => {
           </div>
         </section>
         
-        {/* Project Overview Section - Specific for college project */}
-        <section className="py-8 bg-card/30">
-          <div className="container px-4 md:px-6">
-            <div className="bg-card rounded-lg border border-border p-4 md:p-6">
-              <div className="flex items-start">
-                <div className="p-2 bg-primary/10 rounded-full mr-3 hidden sm:block">
-                  <Info className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h2 className="text-xl font-bold mb-2">College Project Overview</h2>
-                  <p className="text-muted-foreground mb-4">
-                    This financial anomaly detection tool demonstrates how machine learning algorithms can identify unusual 
-                    patterns in time series data. The project combines frontend visualization with simulated backend 
-                    processing to illustrate the concepts of anomaly detection.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <h3 className="font-medium mb-1">Technologies Used:</h3>
-                      <ul className="list-disc list-inside text-muted-foreground space-y-1">
-                        <li>React & Tailwind CSS (Frontend)</li>
-                        <li>Recharts (Data visualization)</li>
-                        <li>Python & TensorFlow/Keras (Simulated backend)</li>
-                        <li>Anomaly detection algorithms (Autoencoder, LSTM)</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="font-medium mb-1">References:</h3>
-                      <ul className="list-disc list-inside text-muted-foreground space-y-1">
-                        <li>Malhotra et al. "LSTM-based Encoder-Decoder for Anomaly Detection"</li>
-                        <li>See <Link to="/education" className="text-primary hover:underline">Educational Resources</Link> for full bibliography</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
         {/* Features Section - Simplified */}
         <section className="py-8">
           <div className="container px-4 md:px-6">
